@@ -14,7 +14,7 @@
 </header>
 <main>
   <form id="resume-form">
-    <div class="all-form">
+    <div class="form-pt1">
       <fieldset>
         <div class="resume-item">
           <label for="name">Name:</label>
@@ -50,6 +50,28 @@
             <span>Apartment</span>
         </div>
       </fieldset>
+    </div>
+      <div id="form-pt2">
+      <fieldset>
+          <div class="resume-item">
+            <label for="resume-resume">Resume's Resume:</label>
+              <textarea name="resume-resume" id="resume-resume" required maxlength="1000"></textarea> 
+          </div>
+          <div class="resume-item">
+            <label for="role">Role:</label>
+              <input type="text" name="role" id="role" required maxlength="40"> 
+          </div>
+          <div class="resume-item">
+            <label for="job-description">Job Description:</label>
+              <input type="text" name="job-description" id="job-description" required maxlength="500">
+          </div>
+          <div class="resume-item">
+            <label for="date">Begin Date:</label>
+              <input type="text" class="input-date" name="date" id="date" value="" required> 
+          </div>
+      </fieldset>
+      <button class="submit-btn" type="submit">Submit</button>
+      <button class="clear-btn" type="button">Clear</button>
     </div>
   </form>
 </main>
