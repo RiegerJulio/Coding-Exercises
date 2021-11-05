@@ -1,0 +1,55 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+header { 
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+header ul{
+  background-color: black;
+  color: white;
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+header p {
+  text-align: center;
+  font-size: 25px;
+}
+
+aside {
+  margin: 20px;
+}
+
+aside h2 {
+  font-size: 20px;
+}
+
+article {
+  margin: 20px;
+  margin-top: 50px;
+}
+
+article h1 {
+  text-align: center;
+}
+
+article p {
+  margin-top: 20px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
