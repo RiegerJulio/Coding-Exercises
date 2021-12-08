@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Resume Form</title>
+</head>
+<body>
+<header>
+  <h1>Resume Form</h1>
+  <p>Fill the fields below</p>
+</header>
+<main>
+  <form id="resume-form">
+    <div class="form-pt1">
+      <fieldset>
+        <div class="resume-item">
+          <label for="name">Name:</label>
+            <input type="text" name="name" id="name" maxlength="40" required>
+        </div>
+        <div class="resume-item">
+          <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" maxlength="40" required>
+        </div>
+        <div class="resume-item">
+          <label for="CPF">CPF:</label>
+            <input type="text" name="CPF" id="CPF" maxlength="11" required>
+        </div>
+        <div class="resume-item">
+          <label for="adress">Adress:</label>
+            <input type="text" name="adress" id="adress" maxlength="200" required>
+        </div>
+        <div class="resume-item">
+          <label for="city">City:</label>
+            <input type="text" name="city" id="city" maxlength="28" required>
+        </div>
+        <div class="resume-item">
+          <label for="state">State:</label>
+            <select type="option" name="state" id="state" required>
+              <option disabled selected value>Select Your State</option>
+            </select>
+        </div>
+        <div class="resume-item">
+          <label for="place">Where do you live: </label>
+            <input type="radio" name="place" id="place" value="apartment" required>
+            <span>House</span>
+            <input type="radio" name="place" id="place-2" value="house" required>
+            <span>Apartment</span>
+        </div>
+      </fieldset>
+    </div>
+      <div id="form-pt2">
+      <fieldset>
+          <div class="resume-item">
+            <label for="resume-resume">Resume's Resume:</label>
+              <textarea name="resume-resume" id="resume-resume" required maxlength="1000"></textarea> 
+          </div>
+          <div class="resume-item">
+            <label for="role">Role:</label>
+              <input type="text" name="role" id="role" required maxlength="40"> 
+          </div>
+          <div class="resume-item">
+            <label for="job-description">Job Description:</label>
+              <input type="text" name="job-description" id="job-description" required maxlength="500">
+          </div>
+          <div class="resume-item">
+            <label for="date">Begin Date:</label>
+              <input type="text" class="input-date" name="date" id="date" value="" required> 
+          </div>
+      </fieldset>
+      <button class="submit-btn" type="submit">Submit</button>
+      <button class="clear-btn" type="button">Clear</button>
+    </div>
+  </form>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
