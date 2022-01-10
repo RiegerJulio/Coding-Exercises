@@ -35,7 +35,7 @@ class Form extends React.Component {
     return (
       <div className="forms">
         <form>
-          {/* falta inserir um value porem quando eu insiro, ele altera todo o fieldset. */}
+          {/* falta inserir um value porem quando eu insiro, ele altera todo o fieldset . */}
           <Fieldset1 handleChange={this.handleChange} />
           <Fieldset2 handleChange={this.handleChange} />
         </form>
