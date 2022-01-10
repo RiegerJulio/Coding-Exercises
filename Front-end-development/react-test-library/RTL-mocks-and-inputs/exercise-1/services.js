@@ -17,9 +17,27 @@ describe('mockar e testar o retorno', () => {
     expect(service.randomNum).toHaveBeenCalledTimes(1);
     expect(service.randomNum).toHaveBeenCalledWith(20, 2)
   })
+
+  test('testing the functions with 3 params and return its multiplication', () => {
+    service.randomNum = jest.fn().mockImplementationOnce((a, b, c) => a * b * c);
+
+    expect(service.randomNum(1, 2, 5)).toBe(10);
+    expect(service.randomNum).toHaveBeenCalled();
+    expect(service.randomNum).toHaveBeenCalledTimes(1);
+    expect(service.randomNum).toHaveBeenCalledWith(1, 2, 5)
+  })
+
+  test('should reset it implementation and make new tests', () => {
+    service.randomNum.mockReset();
+    expect(service.randomNum).toHaveBeenCalledTimes(0);
+
+    service.randomNum.mockImplementation(a => a * 2);
+    expect(service.randomNum(10)).toBe(20);
+    expect(service.randomNum).toHaveBeenCalledTimes(1);
+    expect(service.randomNum).toHaveBeenCalledWith(10)
+  })
   
 })
-
 
 // Exercicios
 
