@@ -25,3 +25,21 @@ const reducer = (state = ESTADO_INICIAL, action) => {
 // 1 - Crie uma store para a nossa aplicação.
 
 const store = Redux.createStore(reducer);
+
+// 4 - Crie eventListeners que escutam os cliques de cada botão, o Previous color e o Next color , e realizam um dispatch com o respectivo action.type de cada.
+
+document.getElementById('next').addEventListener('click', () => {
+  store.dispatch({ type: 'NEXT_COLOR' });
+});
+
+document.getElementById('previous').addEventListener('click', () => {
+  store.dispatch({ type: 'PREVIOUS_COLOR' });
+});
+
+// 5 - Faça o subscribe da store, alterando o innerHTML da tag com id value para a cor atual e o style do elemento com id container . Você deverá ser capaz de ver as cores mudando ao fundo, e o nome da cor exibida.
+
+store.subscribe(() => {
+  const { colors, index } = store.getState();
+  document.getElementById('value').innerHTML = colors[index];
+  document.getElementById('container').style.backgroundColor = colors[index];
+})
