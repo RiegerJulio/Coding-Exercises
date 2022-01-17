@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class FormDataDisplay extends Component {
   render() {
-    // Recupere as informações do seu estado criado no Redux
+    const { professionalForm, personalForm } = this.props;
+    const { nome, email, cpf, endereco, cidade, estado } = personalForm;
+    const { curriculo, cargo, descricao } = professionalForm;
+
     return (
       <div>
         <h2>Dados enviados</h2>
@@ -47,4 +52,14 @@ class FormDataDisplay extends Component {
   }
 }
 
-export default FormDataDisplay;
+FormDataDisplay.propTypes = {
+  professionalForm: PropTypes.objectOf(PropTypes.string).isRequired,
+  personalForm: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  professionalForm: state.reducer.professionalForm,
+  personalForm: state.reducer.personalForm,
+});
+
+export default connect(mapStateToProps)(FormDataDisplay);
