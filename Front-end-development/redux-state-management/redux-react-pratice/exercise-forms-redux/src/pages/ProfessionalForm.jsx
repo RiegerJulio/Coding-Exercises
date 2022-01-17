@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { professionalValueUpdate } from '../redux/actions';
 import Input from '../components/Input';
 import TextArea from '../components/TextArea';
 import Button from '../components/Button';
@@ -13,11 +15,19 @@ class ProfessionalForm extends Component {
       descricao: '',
     };
     this.handleChange = this.handleChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   handleChange({ target }) {
     const { name, value } = target;
     this.setState({ [name]: value });
+  }
+
+  onSubmit() {
+    const { history, dispatchValue } = this.props;
+
+    dispatchValue(this.state);
+    history.push('/formdisplay');
   }
 
   render() {
@@ -50,11 +60,26 @@ class ProfessionalForm extends Component {
         />
         <Button
           label="enviar"
-          onClick={ () => console.log('Envia as informações para a store') }
+          onClick={ this.onSubmit }
         />
       </fieldset>
     );
   }
 }
 
-export default ProfessionalForm;
+ProfessionalForm.propTypes = {
+  dispatchValue: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  professionalForm: state.reducer.professionalForm,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  dispatchValue: (value) => dispatch(professionalValueUpdate(value)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfessionalForm);
