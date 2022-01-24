@@ -1,8 +1,8 @@
 import React from 'react';
-// importe o connect do pacote 'react-redux'
 import propTypes from 'prop-types';
-// importe a ação oriunda do thunk
 import './SearchForm.css';
+import { thunkChar } from '../actions';
+import { connect } from 'react-redux';
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -25,14 +25,14 @@ handleChange(e) {
 submitName(e) {
   e.preventDefault();
   const { inputText } = this.state;
-  //desestruture a ação do thunk como propriedade aqui
+  const { thunk } = this.props;
 
   this.setState({
     inputText: '',
     characterSearched: inputText,
   })
-  // insira a action a ser despachada para o thunk
 
+  thunk(inputText)
 }
 
 render() {
@@ -54,10 +54,13 @@ render() {
 }
 };
 
-// mapeie as ações despachadas como propriedade do componente
+const mapDispatchToProps = (dispatch) => ({
+  thunk: (char) => dispatch(thunkChar(char))
+});
 
+export default connect(null, mapDispatchToProps)(SearchForm);
 
-// conecte as ações despachadas ao redux
-
-//faça as proptypes da ação oriunda do thunk
+SearchForm.propTypes = {
+  thunk: propTypes.func.isRequired,
+}
 
