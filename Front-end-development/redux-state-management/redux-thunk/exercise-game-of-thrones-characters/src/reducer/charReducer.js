@@ -1,4 +1,4 @@
-import { SEARCH_FAIL, SEARCH_SUC, SEARCH_FAIL, SEARCH_INIT } from "../actions";
+import { SEARCH_FAIL, SEARCH_SUC, SEARCH_INIT } from "../actions";
 
 const initialState = {
   loading: false,
@@ -15,13 +15,13 @@ function charReducer(state = initialState, action) {
     case SEARCH_SUC:
       return {
         ...state,
-        loading: true,
-        character: action.character,
+        loading: false,
+        character: action.character[0],
       }
     case SEARCH_FAIL:
       return {
         ...state,
-        loading: true,
+        loading: false,
         error: action.error,
       }
     default:

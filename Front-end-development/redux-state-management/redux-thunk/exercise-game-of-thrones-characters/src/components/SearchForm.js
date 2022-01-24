@@ -63,4 +63,3 @@ export default connect(null, mapDispatchToProps)(SearchForm);
 SearchForm.propTypes = {
   thunk: propTypes.func.isRequired,
 }
-
