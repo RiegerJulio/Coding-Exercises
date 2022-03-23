@@ -157,10 +157,68 @@ WHERE
 
 <pre><code>
 SELECT 
-    first_name
+    employee_id, first_name, LEFT(HIRE_DATE, 4) AS 'hiring year'
+FROM
+    hr.employees;
+
+</pre></code>
+
+14 - 
+
+<pre><code>
+SELECT 
+    employee_id,
+    first_name,
+    DAY(HIRE_DATE) AS 'hiring day of month'
+FROM
+    hr.employees;
+
+</pre></code>
+
+15 - 
+
+<pre><code>
+SELECT 
+    employee_id,
+    first_name,
+    MONTH(HIRE_DATE) AS 'hiring day of month'
+FROM
+    hr.employees;
+
+
+</pre></code>
+
+16 - 
+
+<pre><code>
+SELECT 
+    UCASE(first_name)
+FROM
+    hr.employees;
+
+</pre></code>
+
+17 - 
+
+<pre><code>
+SELECT 
+    LAST_NAME, hire_date
 FROM
     hr.employees
 WHERE
-    LENGTH(first_name) >= 8; 
+    MONTH(hire_date) = 7
+        AND YEAR(hire_date) = 1987;
+
+</pre></code>
+
+18 - 
+
+<pre><code>
+SELECT 
+    first_name,
+    LAST_NAME,
+    DATEDIFF(CURRENT_DATE(), hire_date) AS 'days at company'
+FROM
+    hr.employees
 
 </pre></code>
