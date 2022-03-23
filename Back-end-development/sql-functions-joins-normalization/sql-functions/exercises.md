@@ -119,6 +119,48 @@ ORDER BY 'average salaries' DESC;
 10 - 
 
 <pre><code>
+SELECT 
+    department_id,
+    AVG(salary) AS 'average',
+    COUNT(*) AS 'counter'
+FROM
+    hr.employees
+GROUP BY department_id
+HAVING `counter` > 10;
 
+</pre></code>
+
+11 - 
+
+<pre><code>
+UPDATE hr.employees 
+SET 
+    phone_number = REPLACE(phone_number, '515', '777')
+WHERE
+    phone_number LIKE '515%';
+
+</pre></code>
+
+12 - 
+
+<pre><code>
+SELECT 
+    first_name
+FROM
+    hr.employees
+WHERE
+    LENGTH(first_name) >= 8; 
+
+</pre></code>
+
+13 - 
+
+<pre><code>
+SELECT 
+    first_name
+FROM
+    hr.employees
+WHERE
+    LENGTH(first_name) >= 8; 
 
 </pre></code>
