@@ -53,10 +53,7 @@ const deleteBook = async (req, res) => {
   try {
     const { id } = req.params;
     const book = await booksService.deleteBook(id);
-    if (!book) {
-      res.status(404).send({ message: 'Book not found' });
-    }
-    res.status(200).json(book);
+    res.status(200).send({ message: 'Book deleted' });
   } catch (error) {
     res.status(500).send({ message: 'Algo deu Errado!' });
   }
