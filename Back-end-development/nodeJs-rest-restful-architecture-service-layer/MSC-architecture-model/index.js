@@ -9,7 +9,7 @@ app.get('/user', async (_req, res) => {
   const users = await getUsers();
 
   res.status(200).json(users);
-})
+});
 
 app.post('/user', async (req, res) => {
   const { first_name, last_name, email, password} = req.body;
