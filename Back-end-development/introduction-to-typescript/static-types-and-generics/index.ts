@@ -65,5 +65,38 @@ class Car {
   turn(direction: Directions) {
     console.log(`The car is turning ${direction}`)
   }
-  
+
 }
+
+const gol = new Car('Volkswagen Gol', Colors.SILVER, 4);
+
+gol.openDoor(Doors.DRIVER);
+gol.closeDoor(Doors.DRIVER);
+gol.turnOn();
+gol.speedUp();
+gol.slowDown();
+gol.turn(Directions.LEFT);
+gol.speedUp();
+gol.slowDown();
+gol.turn(Directions.RIGHT);
+gol.speedUp();
+gol.slowDown();
+gol.turn(Directions.RIGHT);
+gol.slowDown();
+gol.stop();
+gol.openDoor(Doors.PASSENGER_RIDE);
+gol.closeDoor(Doors.PASSENGER_RIDE);
+gol.speedUp();
+gol.slowDown();
+gol.turn(Directions.RIGHT);
+gol.speedUp();
+gol.slowDown();
+gol.turn(Directions.LEFT);
+gol.speedUp();
+gol.slowDown();
+gol.turn(Directions.RIGHT);
+gol.slowDown();
+gol.stop();
+gol.openDoor(Doors.PASSENGER_RIDE);
+gol.closeDoor(Doors.PASSENGER_RIDE);
+gol.speedUp();
