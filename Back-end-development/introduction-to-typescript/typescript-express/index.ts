@@ -1,5 +1,8 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
+import 'express-async-errors'
+
+import userRoutes from './routes/userRoutes';
 
 const app = express();
 
@@ -10,6 +13,8 @@ const PORT = 3000;
 app.get('/', (req: Request, res: Response) => {
   res.status(StatusCodes.OK).send('Hello World!');
 });
+
+app.use('/user', userRoutes);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   const { name, message, details } = err as any;
