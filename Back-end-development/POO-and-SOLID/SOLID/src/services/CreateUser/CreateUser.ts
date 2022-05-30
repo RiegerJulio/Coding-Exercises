@@ -2,7 +2,7 @@ import { IUserRepository } from "../../repositories/IUserRepository"
 import { ICreateUserDTO } from "./CreateUserDTO";
 import { User } from "../../models/User";
 
-export class CreaterUser {
+export class CreateUser {
   constructor(private userRepository: IUserRepository) {}
 
   async execute(data: ICreateUserDTO): Promise<void> {
