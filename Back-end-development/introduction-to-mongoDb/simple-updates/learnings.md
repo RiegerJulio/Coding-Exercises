@@ -9,3 +9,5 @@ Hoje aprendi a:
 - Renomear campos utilizando o operador $rename;
 
 - Remover campos utilizando o operador $unset.
+
+os exercicios estão no arquivo queries.md
